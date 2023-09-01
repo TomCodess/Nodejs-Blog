@@ -9,4 +9,8 @@ router.get('', (req, res) => {
     res.send("anyong");
 });
 
+
+
+
+//Exports the router so it can be used in app.js
 module.exports = router;
