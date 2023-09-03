@@ -155,7 +155,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - 9/2/2023
-  - placeholder
+  - Added styling, header, footer, a home page image, and abtracted sectional code
 - [ ] Feature 2
 - [ ] Feature 3
     - [ ] Nested Feature
