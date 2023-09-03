@@ -19,6 +19,10 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
+router.get('/contact', (req, res) => {
+    res.render('contact');
+});
+
 
 //Exports the router so it can be used in app.js
 module.exports = router;
