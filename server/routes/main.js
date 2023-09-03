@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-//Routes
-
 //Basic route function, app.get app.post etc. the '' is the /*something*
 // then we use a req and res with arrow function
 router.get('', (req, res) => {
+    //This is naming for tab name
     const locals = {
         title: "Nodejs Blog",
         description: "Simple blog page made using NodeJs, Express, and MongoDB."
