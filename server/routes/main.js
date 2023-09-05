@@ -10,21 +10,64 @@ const Post = require('../models/Post');
  * HOME
  */
 router.get('', async (req, res) => {
-    //This is naming for tab name
-    const locals = {
-        title: "Nodejs Blog",
-        description: "Simple blog page made using NodeJs, Express, and MongoDB."
-    }
+
 
     try{
-        const data = await Post.find();
+        //This is naming for tab name
+        const locals = {
+        title: "Nodejs Blog",
+        description: "Simple blog page made using NodeJs, Express, and MongoDB."
+        }
+
+        let perPage = 10;
+        let page = req.query.page || 1;
+
+        //more advanced way to get older posts
+        const data = await Post.aggregate([ {$sort: {createdAt: -1} } ])
+        //controls how many 
+        .skip(perPage * page - perPage)
+        .limit(perPage)
+        .exec();
+        
+        //Gets the number of posts
+        const count = await Post.count();
+        const nextPage = parseInt(page) + 1;
+        const hasNextPage = nextPage <= Math.ceil(count / perPage);
+        
         //res.render, chooses a ejs file to render from /// Inside of {locals} can add more variables seperated by commas  
-        res.render('index', {locals, data});
+        res.render('index', {
+            locals, 
+            data,
+            current: page,
+            nextPage: hasNextPage ? nextPage : null
+        });
+
     } catch (error) {
         console.log(error);
     }
 
 });
+
+
+/**
+ * route without pagination
+ * 
+// router.get('', async (req, res) => {
+//     //This is naming for tab name
+//     const locals = {
+//         title: "Nodejs Blog",
+//         description: "Simple blog page made using NodeJs, Express, and MongoDB."
+//     }
+
+//     try{
+//         const data = await Post.find();
+//         //res.render, chooses a ejs file to render from /// Inside of {locals} can add more variables seperated by commas  
+//         res.render('index', {locals, data});
+//     } catch (error) {
+//         console.log(error);
+//     }
+
+// });
 
 
 

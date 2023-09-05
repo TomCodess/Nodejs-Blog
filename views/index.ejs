@@ -19,9 +19,12 @@
       <% }) %> 
     </ul>
   
-  
-   
-      <a href="#" class="pagination">&lt; View Older Posts</a>
+
+    <% if (nextpage !== null) { %>
+      <%# the href checks if there is a next post and grabs the id of the page to display  %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+    
    
   
   
