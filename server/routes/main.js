@@ -19,7 +19,8 @@ router.get('', async (req, res) => {
         description: "Simple blog page made using NodeJs, Express, and MongoDB."
         }
 
-        let perPage = 10;
+        //Number of posts to display variable here
+        let perPage = 5;
         let page = req.query.page || 1;
 
         //more advanced way to get older posts
@@ -49,9 +50,7 @@ router.get('', async (req, res) => {
 });
 
 
-/**
- * route without pagination
- * 
+//route without pagination
 // router.get('', async (req, res) => {
 //     //This is naming for tab name
 //     const locals = {

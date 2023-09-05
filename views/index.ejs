@@ -3,7 +3,7 @@
     <p class="author__body">Learning to web dev. This is a work in progress blog page, learning how to make the features and whatnot + a cool way for friends to see what im up to </p>
   </div>
   
-  <%# <img src="/img/newJeans.webp" alt="bunny" class="Title" width="500" height="500"> %>
+  <img src="/img/newJeans.webp" alt="bunny" class="bunnyimg" width="350" height="750"> 
   
   <section class="articles">
     <h2 class="articles__heading">Latest Posts</h2>
@@ -20,7 +20,7 @@
     </ul>
   
 
-    <% if (nextpage !== null) { %>
+    <% if (nextPage !== null) { %>
       <%# the href checks if there is a next post and grabs the id of the page to display  %>
       <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
     <% } %>
