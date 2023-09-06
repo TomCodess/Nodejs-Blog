@@ -11,6 +11,7 @@
     <ul class="article-ul">
       <% data.forEach(post => { %>
         <li>
+          <%# We get a post by its ID from now on, not its name, and if we click it the route goes to the site + post ID %>
           <a href="/post/<%= post._id %>">
             <span><%= post.title %>></span>
             <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
