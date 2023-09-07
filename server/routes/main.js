@@ -10,8 +10,6 @@ const Post = require('../models/Post');
  * HOME
  */
 router.get('', async (req, res) => {
-
-
     try{
         //This is naming for tab name
         const locals = {
@@ -42,12 +40,33 @@ router.get('', async (req, res) => {
             current: page,
             nextPage: hasNextPage ? nextPage : null
         });
-
     } catch (error) {
         console.log(error);
     }
-
 });
+
+/**
+ * GET /
+ * Post : id
+ */
+router.get('/post/:id', async (req, res) => {
+    try{
+        let slug = req.params.id;
+
+        const data = await Post.findById({_id: slug});
+        const locals = {
+            title: data.title,
+            description: "Simple blog page made using NodeJs, Express, and MongoDB."
+        }
+        //res.render, chooses a ejs file to render from /// Inside of {locals} can add more variables seperated by commas  
+        res.render('post', {locals, data});
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
+
 
 
 //route without pagination
