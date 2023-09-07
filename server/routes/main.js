@@ -65,27 +65,30 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+/**
+ * POST /
+ * Post - searchTerm
+ */
+router.post('/search', async (req, res) => {
+    try{
+        const locals = {
+            title: "Search",
+            description: "Simple blog page made using NodeJs, Express, and MongoDB."
+        }
+
+        let searchTerm = req.body.searchTerm;
+        console.log(searchTerm);
+        
+        //const data = await Post.find();
+        res.send('search', {locals, data});
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 
 
 
-//route without pagination
-// router.get('', async (req, res) => {
-//     //This is naming for tab name
-//     const locals = {
-//         title: "Nodejs Blog",
-//         description: "Simple blog page made using NodeJs, Express, and MongoDB."
-//     }
-
-//     try{
-//         const data = await Post.find();
-//         //res.render, chooses a ejs file to render from /// Inside of {locals} can add more variables seperated by commas  
-//         res.render('index', {locals, data});
-//     } catch (error) {
-//         console.log(error);
-//     }
-
-// });
 
 
 

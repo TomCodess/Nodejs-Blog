@@ -12,6 +12,10 @@ const PORT = 5000 || process.env.PORT;
 //connect to database
 connectDB();
 
+//middleware to be able to search for posts on the page
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
 //make it use public folder for styling 
 app.use(express.static('public'));
 
