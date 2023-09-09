@@ -9,6 +9,7 @@
     <h2 class="articles__heading">Latest Posts</h2>
   
     <ul class="article-ul">
+      <%# We use for each bc it is a list of posts %>
       <% data.forEach(post => { %>
         <li>
           <%# We get a post by its ID from now on, not its name, and if we click it the route goes to the site + post ID %>
