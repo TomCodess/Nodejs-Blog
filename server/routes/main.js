@@ -58,7 +58,7 @@ router.get('/post/:id', async (req, res) => {
             title: data.title,
             description: "Simple blog page made using NodeJs, Express, and MongoDB."
         }
-        //res.render, chooses a ejs file to render from /// Inside of {locals} can add more variables seperated by commas  
+        //res.render, chooses a ejs file to render from /// Inside of {locals} we can add more variables seperated by commas  
         res.render('post', {locals, data});
     } catch (error) {
         console.log(error);
