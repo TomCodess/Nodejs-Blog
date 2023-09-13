@@ -116,19 +116,6 @@ router.get('/contact', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function insertPostData () {
     //   Post.insertMany([
     //     {
