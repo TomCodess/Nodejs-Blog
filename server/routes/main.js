@@ -95,16 +95,6 @@ router.post('/search', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 //routes to about page
 router.get('/about', (req, res) => {
     //res.render, chooses a ejs file to render from 
