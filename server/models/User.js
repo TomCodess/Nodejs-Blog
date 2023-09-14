@@ -3,13 +3,18 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
+const UserSchema = new Schema({
     //blog post content skeleton
-    title: {
+    username: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+    },
+    password: {
+        type: String,
+        required: true,
     },
     
 });
 //8:06
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('User', UserSchema);
