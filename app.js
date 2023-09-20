@@ -11,7 +11,7 @@ const connectDB = require('./server/config/db');
 
 const app = express();
 //or statment is for when if I want to upload to server and not host locally.
-const PORT = 5000 || process.env.PORT;
+const PORT = 4000 || process.env.PORT;
 
 //connect to database
 connectDB();
