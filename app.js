@@ -42,8 +42,6 @@ app.set('view engine', 'ejs');
 
 //Routes the endpoint to server folder so avoid clutter
 app.use('/', require('./server/routes/main'));
-
-
 app.use('/', require('./server/routes/admin'));
 
 app.listen(PORT, () => {
