@@ -39,5 +39,22 @@ router.post('/admin', async (req, res) => {
   
   });
 
+/**
+ * POST /
+ * Admin - Register
+ */
+router.post('/register', async (req, res) => {
+    try {
+        const {username, password} =  req.body;
+        console.log(req.body);
+  
+      res.redirect('/admin');
+      } catch (error) {
+          console.log(error);
+      }
+  
+  });
+
+
 //Exports the router so it can be used in app.js
 module.exports = router;
