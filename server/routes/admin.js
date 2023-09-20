@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
-//
+//used to store password in database as encrypted string
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+
 const adminLayout = '../views/layouts/admin'
 
 /**
@@ -46,9 +50,15 @@ router.post('/admin', async (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         const {username, password} =  req.body;
-        console.log(req.body);
-  
-      res.redirect('/admin');
+        const hashPassword = await bcrypt.hash(password, 10);
+        
+        try{
+            const user = await User.create({username, password: hashPassword});
+            res.status(201).json({message: 'User created,', user});
+        } catch (error){
+
+        }
+      
       } catch (error) {
           console.log(error);
       }
