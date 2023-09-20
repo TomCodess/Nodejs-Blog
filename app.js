@@ -2,8 +2,11 @@ require('dotenv').config();
 
 const express =  require('express');
 const expressLayout = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
+const MongoStore = require('connect-mongo');
 
 const connectDB = require('./server/config/db');
+const MongoStore = require('express-sessions');
 
 const app = express();
 //or statment is for when if I want to upload to server and not host locally.
