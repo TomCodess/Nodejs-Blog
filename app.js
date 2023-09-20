@@ -15,9 +15,21 @@ const PORT = 5000 || process.env.PORT;
 //connect to database
 connectDB();
 
-//middleware to be able to search for posts on the page
+//Middleware to be able to search for posts on the page
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cookieParser);
+
+app.use(session({
+    secert: 'idk4fun',
+    resave: false,
+    saveUnitialized: true,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI
+    }),
+    //If i want to set a max cookie age
+    //cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
+}));
 
 //make it use public folder for styling 
 app.use(express.static('public'));
