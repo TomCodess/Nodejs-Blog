@@ -1,12 +1,13 @@
 require('dotenv').config();
 
-const express =  require('express');
+const express = require('express');
 const expressLayout = require('express-ejs-layouts');
+const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
 const connectDB = require('./server/config/db');
-const MongoStore = require('express-sessions');
 
 const app = express();
 //or statment is for when if I want to upload to server and not host locally.
