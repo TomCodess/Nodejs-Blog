@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo');
 const connectDB = require('./server/config/db');
 
 const app = express();
-//or statment is for when if I want to upload to server and not host locally.
+//or statment is for when if I want to upload to server and not host locally
 const PORT = 5000 || process.env.PORT;
 
 //connect to database
