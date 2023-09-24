@@ -1,2 +1,0 @@
-layouts is a folder that routes to what each page looks like. 
-Different pages stay under the root folder "views"

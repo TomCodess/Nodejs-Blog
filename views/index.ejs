@@ -1,34 +1,32 @@
 <div class="author">
-    <h1 class="author__heading">Hi, I'm Tom!</h1>
-    <p class="author__body">Learning to web dev. This is a work in progress blog page, learning how to make the features and whatnot + a cool way for friends to see what im up to </p>
-  </div>
-  
-  <img src="/img/newJeans.webp" alt="bunny" class="bunnyimg" width="350" height="750"> 
-  
-  <section class="articles">
-    <h2 class="articles__heading">Latest Posts</h2>
-  
-    <ul class="article-ul">
-      <%# We use for each bc it is a list of posts %>
-      <% data.forEach(post => { %>
-        <li>
-          <%# We get a post by its ID from now on, not its name, and if we click it the route goes to the site + post ID %>
-          <a href="/post/<%= post._id %>">
-            <span><%= post.title %>></span>
-            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
-          </a>
-        </li>
-      <% }) %> 
-    </ul>
+  <h1 class="author__heading">Hallo! This is Tom.</h1>
+  <p class="author__body">SWE learning about web dev and other stuff</p>
+</div>
+
+<img src="/img/howls.webp" alt="" class="hero-image" width="981" height="528">
+
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%= post.title %></span>
+          <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+
+
+  <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+  <% } %>
+ 
+
   
 
-    <% if (nextPage !== null) { %>
-      <%# the href checks if there is a next post and grabs the id of the page to display  %>
-      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
-    <% } %>
-    
-   
-  
-  
-  
-  </section>
+
+
+</section>
