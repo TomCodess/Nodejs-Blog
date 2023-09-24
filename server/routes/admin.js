@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 
 
 const adminLayout = '../views/layouts/admin'
-
 /**
  * GET /
  * Admin - Login Page
