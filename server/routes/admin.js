@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
-const User = require('../models/User');
-//used to store password in database as encrypted string
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
 
 const adminLayout = '../views/layouts/admin'
 /**
