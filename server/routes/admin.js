@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
-
 /**
  * 
  * Check Login
